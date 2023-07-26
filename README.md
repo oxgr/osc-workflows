@@ -9,15 +9,17 @@ Before you get started, determine the proper context for this implementation. As
 - Do you prioritise **ease of setup or customisability**?
 
 ## Steps
-### Connect devices
+### 1. Connect devices
 Make sure all devices are connected to the same network, either wirelessly or through an ethernet cable, **ideally to a single router**. Simplifying the network will save on possible networking drama.
 
-### Set static IP addresses
+### 2. Set static IP addresses (optional)
 When devices connect to a router, the router usually assigns them an [IP address](#ip-address) based on what open slots it has available. Think air traffic controllers assigning runways to airplanes. This process is known as DHCP.
 
-However, the router can change IP addresses on a whim if it deems it necessary. Usually, this doesn't make much of a difference, but when dealing with OSC, we need all our devices to know exactly where to find each other. To do this, we set a **static IP address**, one that the router knows to never change.
+However, the router can change IP addresses on a whim if it deems it necessary. Usually, this doesn't make much of a difference. 
 
-### Find IP addresses
+When dealing with OSC, these changes can make it hard for our devices to find each other. To avoid this, we set a **static IP address**, one that the router knows to never change.
+
+### 3. Find IP addresses
 Open a terminal/command prompt and run the command for the associated operating system.
 
 #### Linux
@@ -35,22 +37,18 @@ ipconfig getifaddr en0
 ipconfig getifaddr en1
 ```
 
-### Set up OSC implentations
+#### Windows
+Follow instructions [here](https://support.microsoft.com/en-us/windows/find-your-ip-address-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9#Category=Windows_10).
+
+### 4. Set up OSC implentations
+Follow these guides for your specific devices/programs.
+- [Raspberry Pi](#raspberry-pi)
+- [Touchdesigner](touchdesigner.md)
 
 
-### Test
+### 5. Test
+- cli tools
 
-## Raspberry Pi
-There are numerous ways to work with OSC on a Pi.
-### [Node-RED](./pi-nodered.md)
-- Pros
-	- simple setup
-	- built-in messaging protocols
-	- easy to deal with GPIO data
-	- editable from other devices in network
-- Cons
-	- not very maintained
-	- a bit of a learning curve
 
 
 
@@ -60,6 +58,7 @@ There are numerous ways to work with OSC on a Pi.
 	- higher latency
 	- lower message frequency
 	- better energy efficiency
+	- requires a separate server running
 	- good for IoT devices running on battery power
 
 ## Glossary
