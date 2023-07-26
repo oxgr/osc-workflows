@@ -1,5 +1,6 @@
 # OSC Workflows
 This document outlines different ways to connect devices using the Open Sound Control (OSC) protocol.
+
 ## Preparation
 Before you get started, determine the proper context for this implementation. Ask questions such as:
 - What devices need to be connected?
@@ -9,12 +10,35 @@ Before you get started, determine the proper context for this implementation. As
 
 ## Steps
 ### Connect devices
-Make sure all devices are connected to the same network.
+Make sure all devices are connected to the same network, either wirelessly or through an ethernet cable, **ideally to a single router**. Simplifying the network will save on possible networking drama.
 
-2. Find the IP addresses of each device to send/receive from.
-3. Set up OSC implentations for each device.
-4. Test devices in isolation.
-5. Test devices together.
+### Set static IP addresses
+When devices connect to a router, the router usually assigns them an [IP address](#ip-address) based on what open slots it has available. Think air traffic controllers assigning runways to airplanes. This process is known as DHCP.
+
+However, the router can change IP addresses on a whim if it deems it necessary. Usually, this doesn't make much of a difference, but when dealing with OSC, we need all our devices to know exactly where to find each other. To do this, we set a **static IP address**, one that the router knows to never change.
+
+### Find IP addresses
+Open a terminal/command prompt and run the command for the associated operating system.
+
+#### Linux
+```shell
+# If the device is only connected to one network
+hostname -I 
+```
+
+#### macOS
+```shell
+# If connecting via wifi
+ipconfig getifaddr en0 
+
+# If connecting via ethernet
+ipconfig getifaddr en1
+```
+
+### Set up OSC implentations
+
+
+### Test
 
 ## Raspberry Pi
 There are numerous ways to work with OSC on a Pi.
