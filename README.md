@@ -8,7 +8,9 @@ Before you get started, determine the proper context for this implementation. As
 - Do you prioritise **ease of setup or customisability**?
 
 ## Steps
-1. Connect all devices to the same network.
+### Connect devices
+Make sure all devices are connected to the same network.
+
 2. Find the IP addresses of each device to send/receive from.
 3. Set up OSC implentations for each device.
 4. Test devices in isolation.
